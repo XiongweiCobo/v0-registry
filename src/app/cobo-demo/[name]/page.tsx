@@ -6,9 +6,10 @@ import { Renderer } from "@/app/cobo-demo/[name]/renderer";
 import { getRegistryItem } from "@/lib/registry";
 
 export async function generateStaticParams() {
-  return Object.keys(demos).map((name) => ({
-    name,
-  }));
+  // return Object.keys(demos).map((name) => ({
+  //   name,
+  // }));
+  return [{ name: "button" }];
 }
 
 export default async function DemoPage({
