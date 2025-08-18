@@ -35,6 +35,7 @@ export function OpenInV0Button({
   const handleClick = useCallback(
     (e: MouseEvent<HTMLButtonElement>) => {
       if (process.env.NODE_ENV === "development") {
+        console.log('Open in v0 url: ', {url,registryUrl,title,prompt});
         e.preventDefault();
         toast.warning("You're on localhost", {
           description:
