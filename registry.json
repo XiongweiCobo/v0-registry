@@ -62,6 +62,22 @@
       "dependencies": [
         "@cobo/cobo-ui-toolkit"
       ]
+    },
+    {
+      "name": "input",
+      "type": "registry:component",
+      "title": "Input",
+      "description": "Accepts user input.",
+      "files": [
+        {
+          "type": "registry:file",
+          "path": "src/cobo/components/input.tsx",
+          "target": "components/ui/input.tsx"
+        }
+      ],
+      "dependencies": [
+        "@cobo/cobo-ui-toolkit"
+      ]
     }
   ]
 }

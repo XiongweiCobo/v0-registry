@@ -1,7 +1,7 @@
 "use client";
 
 import { Check, Copy } from "lucide-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { OpenInV0Button } from "@/components/registry/open-in-v0";
 import { Button } from "@/components/ui/button";
@@ -19,17 +19,17 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import type { Component } from "@/lib/registry";
+import { Input } from "@cobo/cobo-ui-toolkit";
+import { getPrompt } from "@/lib/utils";
 
 interface ComponentCardProps {
   component: Component;
   baseUrl: string;
-  prompt: string;
 }
 
 export function ComponentCard({
   component,
   baseUrl,
-  prompt,
 }: ComponentCardProps) {
   const [copied, setCopied] = useState(false);
 
@@ -46,8 +46,20 @@ export function ComponentCard({
     }
   };
 
+  const [userPrompt, setUserPrompt] = useState("");
+
+  const prompt = useMemo(() => {
+    if (!userPrompt.trim()) {
+      return getPrompt();
+    }
+    return `${userPrompt}\n\n${getPrompt()}`;
+  }, [userPrompt]);
+
   return (
     <section>
+      <div className="mb-6">
+        <Input value={userPrompt} onChange={(e) => setUserPrompt(e.target.value)} size="large"  placeholder="prompt" />
+      </div>
       <Card id="starting-kit" className="border-foreground/25">
         <CardHeader>
           <div className="flex flex-col gap-4">

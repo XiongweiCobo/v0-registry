@@ -9,7 +9,10 @@ export async function generateStaticParams() {
   // return Object.keys(demos).map((name) => ({
   //   name,
   // }));
-  return [{ name: "button" }];
+  return [
+    { name: "button" },
+    { name: "input" },
+  ];
 }
 
 export default async function DemoPage({
