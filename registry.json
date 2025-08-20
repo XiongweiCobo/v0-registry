@@ -60,7 +60,8 @@
         }
       ],
       "dependencies": [
-        "@cobo/cobo-ui-toolkit"
+        "@cobo/cobo-ui-toolkit",
+        "@ant-design/colors"
       ]
     },
     {
@@ -76,7 +77,8 @@
         }
       ],
       "dependencies": [
-        "@cobo/cobo-ui-toolkit"
+        "@cobo/cobo-ui-toolkit",
+        "@ant-design/colors"
       ]
     }
   ]
